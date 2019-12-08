@@ -49,7 +49,8 @@ Per a la opció **a** es mostraràn sequencialment tots els criteris que es pode
 Per a la opció **b** es resetejaràn totes les preferències de manera que no hi haurà cap any, rating o nombre d'estrelles preferent. 
 Per a la opció **c** s'ensenyaran les preferències que hi hagi guardades.
 La opció **d** simplement tornarà al menú principal.
-- Per a qualsevol altre entrada, es mostra un missatge d'error i transcorren 3 segons fins que es
+Aquest menú també accepta les entrades de les opcions en majuscula. Qualsevol altre opció introduida tornarà un missatge d'error i tornarà a mostrar el menú.
+Al menú principal, si no s'introdueix un número de l'1 al 4 es mostra un missatge d'error i transcorren 3 segons fins que es
 torna a mostrar el menú.
 
 **llistat_anys_disponibles.txt:** Aquest script guardarà en un arxiu tots els anys que apareguin al cinquè camp de l'arxiu netflix.csv i els imprimirà en files de 6 columnes dins un requadre amb el títol *POSSIBLES ANYS*.
