@@ -1,3 +1,62 @@
+(Catalan follows)
+# Movie Menu Selection using Bash
+
+## Goal
+This project is designed to display a menu that offers the user a series of criteria found in a `.csv` file. 
+The file is comprised of a series of titles, as well as other characteristics, such as a movie description or its rating.
+
+## How to use (in a Linux Machine)
+There are a total of 4 scripts written in Bash (`.sh` extension). In a linux machine, it is not necessary to have any extra libraries or dependencies installed.
+To start the program, run the file `main.sh`. Here's an example of what the instruction looks like, and what you should get on the terminal: 
+```bash
+$ bash main.sh
+---------------- Menu ----------------
+	1. Recomenació ràpida
+	2. Llistar per any
+	3. Llistar per rating
+	4. Criteris de cerca
+	5. Sortir
+--------------------------------------
+Introdueixi una opció: 5
+$
+```
+
+## File's explanation
+**arreglar_dades.sh:** This script modifies the file `netflix.csv` so that the quotes found in some titles are removed, it adds a 0 on the field `user_rating_score` if that value is null, and it also sorts the titles according to the later, as well as removing duplicates. 
+
+**main.sh:** Before anything, the files `anys.txt` (years in catalan), `ratings.txt` and `estrelles.txt` (stars in catalan) will be created, so that we don't get an error when manipulating this files in the case that the user hasn't previously pressed the option that would automatically create them. Right after, the script `arreglar_dades.sh` and `menu.sh` will be called. And finally, the user input for the menu option will be read. 
+
+**opcio1.sh:** The first option filters the movie database according the user defined preferences, if any. If no preferences had been set, then this option will return a movie at random.
+
+**opcio2.sh:** The second option reads a year inputed by the user, and it looks for the all the titles whose production year matches the search. This movie titles are then showed on screen. 
+
+**opcio3.sh:** The third option asks the user for a number of stars (between 1 and 5) by which they want to filter the rating. Then it's showed on screen all the titles that have the introduces rating or higher. The format will also show the number of stars each movie has. 
+
+**opcio4.sh:** Option four will show yet another menu where the search preferences can be changed. This menu has the following options: 
+
+~~~
+--------------------------------------
+            Criteris de Cerca
+--------------------------------------
+a. Modificar Preferencies
+b. Eliminar Preferencies
+c. Preferencies actuals
+d. Sortir
+ --------------------------------------
+~~~
+
+Option **a** (modify preferences) will show sequencially all the criteria that be changed. First it will show all the available years (which calls the script `llistat_anys_disponibles.sh`, and it will show an example of how to introduce the years for the search filter. Lastly it will also ask for the number of stars in the search criteria. 
+
+Option **b** will reset all of the preferences, including year, rating or number or stars.
+
+Option **c** will show whatever the currently saved preferences are. 
+
+Option **d** will go back to the main menu. 
+
+**llistat_anys_disponibles.txt:** This script will save in a text file all the years that appear in at least one movie in the file `netflix.csv`.
+
+
+
 # PRÀCTICA 2 - PROGRAMARI DEL SISTEMA
 
 ## Objectiu:
